@@ -25,84 +25,83 @@
   </head>
   <body>
     <div class="hero-wrapper">
-      <div class="content">
-        <header>
+      <header>
+        <nav class="navbar navbar-expand-lg sticky-top navbar-light">
           <div class="container">
-            <nav class="navbar navbar-expand-lg navbar-light">
-              <a class="logo" href="index.html">
-                <img src="imgs/logo.svg" alt="logo" />
-              </a>
-              <div
-                class="toggler"
-                data-toggle="collapse"
-                data-target="#navbarSupportedContent"
-                aria-controls="navbarSupportedContent"
-                aria-expanded="false"
-                aria-label="Toggle navigation"
-              >
-                <div class="bar1"></div>
-                <div class="bar3"></div>
-              </div>
+            <a class="logo" href="index.html">
+              <img src="imgs/logo.svg" alt="logo" />
+            </a>
+            <div
+              class="toggler"
+              data-toggle="collapse"
+              data-target="#navbarSupportedContent"
+            >
+              <div class="bar1"></div>
+              <div class="bar3"></div>
+            </div>
 
-              <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav mr-auto">
-                  <li class="nav-item active">
-                    <a class="nav-link" href="#">FEATURES</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">FAQ</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">CONTACT</a>
-                  </li>
-                </ul>
-                <ul class="navbar-nav ml-auto">
-                  <li><a href="#" class="login-btn btn">LOG IN</a></li>
-                  <li><a class="primary--btn btn" href="#">SIGN UP</a></li>
-                </ul>
-              </div>
-            </nav>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                  <a data-scroll="features" class="nav-link" href="#"
+                    >FEATURES</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a data-scroll="faq" class="nav-link" href="#">FAQ</a>
+                </li>
+                <li class="nav-item">
+                  <a data-scroll="contact" class="nav-link last" href="#"
+                    >CONTACT</a
+                  >
+                </li>
+              </ul>
+              <ul class="navbar-nav login-btns ml-auto">
+                <li><a href="#" class="login-btn btn">LOG IN</a></li>
+                <li><a class="primary--btn btn" href="#">SIGN UP</a></li>
+              </ul>
+            </div>
           </div>
-        </header>
-        <div class="hero-section">
-          <div class="container">
-            <h3 class="section-subtitle">A UNIQUE APPROACH TO THE CLOUD</h3>
-            <h1 class="section-title">
-              Simple Scaling For The Residential Cloud
-            </h1>
-            <a href="#" class="primary--btn btn">DISCOVER MORE</a>
-          </div>
+        </nav>
+      </header>
+      <div class="hero-section">
+        <div class="container">
+          <h3 class="section-subtitle">A UNIQUE APPROACH TO THE CLOUD</h3>
+          <h1 class="section-title">
+            Simple Scaling For The Residential Cloud
+          </h1>
+          <a href="#" class="primary--btn btn">DISCOVER MORE</a>
         </div>
+      </div>
 
-        <div class="our-services">
-          <div class="container">
-            <div class="row">
-              <div class="col-md-6">
-                <div class="left-side">
-                  <img
-                    class="img-fluid"
-                    src="imgs/services-img.png"
-                    draggable="false"
-                    alt="services-img"
-                  />
-                </div>
+      <div class="our-services">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-6">
+              <div class="left-side">
+                <img
+                  class="img-fluid"
+                  src="imgs/services-img.png"
+                  draggable="false"
+                  alt="services-img"
+                />
               </div>
-              <div class="col-md-6">
-                <div class="right-side">
-                  <h4 class="section-subtitle">OUR SERVICES</h4>
-                  <h2 class="section-title">Scalable Cloud Computing</h2>
-                  <p>
-                    Our scalable virtual machines come with add-on storage,
-                    security, and monitoring capabilities to easily setup and
-                    manage your production needs.
-                  </p>
-                  <p>
-                    Deploy a VM using any distribution from our wide selection
-                    of auto-install images. Begin using our infrastructure
-                    within minutes.
-                  </p>
-                  <a href="#" class="primary--btn">SEE PRICING</a>
-                </div>
+            </div>
+            <div class="col-md-6">
+              <div class="right-side">
+                <h4 class="section-subtitle">OUR SERVICES</h4>
+                <h2 class="section-title">Scalable Cloud Computing</h2>
+                <p>
+                  Our scalable virtual machines come with add-on storage,
+                  security, and monitoring capabilities to easily setup and
+                  manage your production needs.
+                </p>
+                <p>
+                  Deploy a VM using any distribution from our wide selection of
+                  auto-install images. Begin using our infrastructure within
+                  minutes.
+                </p>
+                <a href="#" class="primary--btn">SEE PRICING</a>
               </div>
             </div>
           </div>
@@ -110,7 +109,7 @@
       </div>
     </div>
 
-    <div class="benefits-wrapper">
+    <div id="features" class="benefits-wrapper">
       <div class="content">
         <div class="container">
           <div class="row">
@@ -281,15 +280,50 @@
               <h3>Our Panel is compatible with</h3>
               <ul class="list-unstyled">
                 <li>
-                  <img src="imgs/imac.svg" alt="apple icon" />
+                  <svg
+                    class="mac"
+                    width="17"
+                    height="20"
+                    viewBox="0 0 17 20"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M16.4933 15.5866C16.1908 16.2853 15.8328 16.9285 15.418 17.5198C14.8526 18.326 14.3896 18.884 14.0329 19.1939C13.4798 19.7025 12.8872 19.963 12.2527 19.9778C11.7971 19.9778 11.2478 19.8482 10.6083 19.5852C9.96669 19.3235 9.37709 19.1939 8.83797 19.1939C8.27256 19.1939 7.66616 19.3235 7.01754 19.5852C6.36793 19.8482 5.84461 19.9852 5.4445 19.9988C4.83601 20.0247 4.22948 19.7568 3.62407 19.1939C3.23767 18.8568 2.75435 18.2791 2.17536 17.4606C1.55414 16.5865 1.04342 15.573 0.643311 14.4175C0.214807 13.1693 0 11.9607 0 10.7907C0 9.45032 0.28962 8.29431 0.869723 7.32557C1.32563 6.54745 1.93216 5.93364 2.69127 5.48304C3.45038 5.03243 4.27059 4.80281 5.1539 4.78812C5.63721 4.78812 6.27102 4.93762 7.05865 5.23144C7.84405 5.52625 8.34836 5.67575 8.56946 5.67575C8.73476 5.67575 9.29499 5.50094 10.2447 5.15243C11.1428 4.82923 11.9008 4.69541 12.5218 4.74812C14.2045 4.88392 15.4686 5.54723 16.3093 6.74226C14.8044 7.65408 14.06 8.9312 14.0748 10.5695C14.0884 11.8457 14.5514 12.9076 15.4612 13.7508C15.8735 14.1422 16.334 14.4446 16.8463 14.6594C16.7352 14.9816 16.6179 15.2903 16.4933 15.5866ZM12.6341 0.400602C12.6341 1.40083 12.2687 2.33474 11.5403 3.19916C10.6614 4.22678 9.59819 4.82059 8.44527 4.72689C8.43057 4.60689 8.42206 4.4806 8.42206 4.34789C8.42206 3.38767 8.84007 2.36005 9.58239 1.51983C9.95299 1.09441 10.4243 0.740678 10.9959 0.458501C11.5663 0.180534 12.1058 0.0268124 12.6131 0.000488281C12.628 0.134203 12.6341 0.267926 12.6341 0.400589V0.400602Z"
+                      fill="white"
+                    />
+                  </svg>
                   <span>Mac & iOS</span>
                 </li>
                 <li>
-                  <img src="imgs/android.svg" alt="android icon" />
+                  <svg
+                    class="android"
+                    width="22"
+                    height="13"
+                    viewBox="0 0 22 13"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M16.3681 3.71457L18.1918 0.555345C18.2948 0.378238 18.2325 0.153264 18.0578 0.0503499C17.8831 -0.0525627 17.6557 0.00726908 17.5552 0.184377L15.7076 3.38428C14.2979 2.74047 12.7111 2.38147 11.0046 2.38147C9.29817 2.38147 7.71138 2.74047 6.3017 3.38428L4.45404 0.184377C4.35113 0.00726908 4.12615 -0.0525627 3.94905 0.0503499C3.77194 0.153264 3.7121 0.378238 3.81502 0.555345L5.63875 3.71457C2.49389 5.41863 0.363815 8.60178 0.0119934 12.3282H21.9973C21.6454 8.60178 19.5154 5.41863 16.3681 3.71457ZM5.95706 9.24081C5.44728 9.24081 5.03562 8.82676 5.03562 8.31937C5.03562 7.80959 5.44967 7.39793 5.95706 7.39793C6.46684 7.39793 6.8785 7.81198 6.8785 8.31937C6.8809 8.82676 6.46684 9.24081 5.95706 9.24081ZM16.0498 9.24081C15.54 9.24081 15.1284 8.82676 15.1284 8.31937C15.1284 7.80959 15.5424 7.39793 16.0498 7.39793C16.5596 7.39793 16.9712 7.81198 16.9712 8.31937C16.9736 8.82676 16.5596 9.24081 16.0498 9.24081Z"
+                      fill="white"
+                    />
+                  </svg>
                   <span>Android</span>
                 </li>
                 <li>
-                  <img src="imgs/windows-icon.svg" alt="windows icon" />
+                  <svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 20 20"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M0 2.81864L8.11068 1.71405L8.11423 9.53746L0.00740909 9.58362L0 2.81864ZM8.10682 10.4389L8.11311 18.2691L0.00629545 17.1545L0.00584091 10.3863L8.10682 10.4389ZM9.09002 1.56955L19.8441 0V9.43795L9.09002 9.52333V1.56955ZM19.8466 10.5125L19.8441 19.908L9.09 18.3901L9.07493 10.4949L19.8466 10.5125Z"
+                      fill="white"
+                    />
+                  </svg>
                   <span>Windows</span>
                 </li>
               </ul>
@@ -390,7 +424,7 @@
       </div>
     </div>
 
-    <div class="faq">
+    <div id="faq" class="faq">
       <div class="container">
         <div class="row">
           <div class="col-md-6 order-2 order-md-1">
@@ -821,12 +855,47 @@
               <div class="social">
                 <div class="social-icon">
                   <a href="#">
-                    <img src="imgs/mail-icon.svg" alt="mail icon" />
+                    <svg
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M19 5H5C3.89543 5 3 5.89543 3 7V17C3 18.1046 3.89543 19 5 19H19C20.1046 19 21 18.1046 21 17V7C21 5.89543 20.1046 5 19 5Z"
+                        stroke="#233258"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                      <path
+                        d="M3 7L12 13L21 7"
+                        stroke="#233258"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
                   </a>
                 </div>
                 <div class="social-icon">
                   <a href="#">
-                    <img src="imgs/twitter.svg" alt="twitter icon" />
+                    <svg
+                      width="22"
+                      height="19"
+                      viewBox="0 0 22 19"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M21 2.01001C20 2.50001 19.02 2.69901 18 3.00001C16.879 1.73501 15.217 1.66501 13.62 2.26301C12.023 2.86101 10.977 4.32301 11 6.00001V7.00001C7.755 7.08301 4.865 5.60501 3 3.00001C3 3.00001 -1.182 10.433 7 14C5.128 15.247 3.261 16.088 1 16C4.308 17.803 7.913 18.423 11.034 17.517C14.614 16.477 17.556 13.794 18.685 9.77501C19.0218 8.55268 19.189 7.28987 19.182 6.02201C19.18 5.77301 20.692 3.25001 21 2.00901V2.01001Z"
+                        stroke="#233258"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
                   </a>
                 </div>
               </div>
@@ -836,30 +905,71 @@
       </div>
     </div>
 
-    <div class="contact-us">
+    <div id="contact" class="contact-us">
       <div class="container">
         <h2 class="section-title text-md-center">Contact Us & Get Started</h2>
-        <form action="" class="contact-form" method="POST">
+        <form class="contact-form" method="POST">
           <div class="row">
             <div class="col-md-6">
               <div class="info">
-                <input type="text" name="name" placeholder="Full Name" />
-                <input type="text" name="company" placeholder="Company" />
+                <div class="input-group">
+                  <input
+                    id="fullName"
+                    type="text"
+                    name="name"
+                    placeholder="Full Name"
+                  />
+                  <div class="custom-alert">*Error Message</div>
+                </div>
+                <div class="input-group">
+                  <input
+                    id="company"
+                    type="text"
+                    name="company"
+                    placeholder="Company"
+                  />
+                  <div class="custom-alert">*Error Message</div>
+                </div>
               </div>
               <div class="info">
-                <input type="tel" name="phone" placeholder="Phone Number" />
-                <input type="email" name="email" placeholder="Email Address" />
+                <div class="input-group">
+                  <input
+                    id="phone"
+                    type="tel"
+                    name="phone"
+                    placeholder="Phone Number"
+                  />
+                  <div class="custom-alert">*Error Message</div>
+                </div>
+                <div class="email-container input-group">
+                  <input
+                    id="emailInput"
+                    type="email"
+                    name="email"
+                    placeholder="Email Address"
+                  />
+                  <div class="custom-alert">*Error Message</div>
+                </div>
               </div>
-              <div class="business">
+              <div class="business input-group">
                 <input
+                  id="business"
                   type="text"
                   placeholder="Business Type"
                   name="business"
                 />
+                <div class="custom-alert">*Error Message</div>
               </div>
             </div>
             <div class="col-md-6">
-              <textarea name="msg" placeholder="Your Message"></textarea>
+              <div class="input-group">
+                <textarea
+                  id="msg"
+                  name="msg"
+                  placeholder="Your Message"
+                ></textarea>
+                <div class="custom-alert">*Error Message</div>
+              </div>
             </div>
           </div>
           <div class="submit">
