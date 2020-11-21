@@ -1,3 +1,48 @@
+<?php
+
+  // check if the user is get from request method
+  if($_SERVER['REQUEST_METHOD'] == "POST") {
+
+		// assign variables
+		$user  	    = filter_var($_POST['name'], FILTER_SANITIZE_STRING);
+		$company  	= filter_var($_POST['company'], FILTER_SANITIZE_STRING);
+		$phone    	= filter_var($_POST['phone'], FILTER_SANITIZE_NUMBER_INT);
+		$email      = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
+    $business  	= filter_var($_POST['business'], FILTER_SANITIZE_STRING);
+		$msg      	= filter_var($_POST['msg'], FILTER_SANITIZE_STRING);
+    
+    $formErrors = array();
+		if(empty($user)) {
+      $formErrors[] = "<strong>Username!</strong> can't be <strong>Empty</strong>";
+    }
+		if(empty($company)) {
+      $formErrors[] = "<strong>Company!</strong> can't be <strong>Empty</strong>";
+    }
+		if(empty($phone)) {
+      $formErrors[] = "<strong>Phone Number!</strong> can't be <strong>Empty</strong>";
+    }
+    if(empty($email)) {
+      $formErrors[] = "<strong>Email!</strong> can't be <strong>Empty</strong>";
+    }
+    if(empty($business)) {
+      $formErrors[] = "<strong>Business!</strong> can't be <strong>Empty</strong>";
+    }
+		if(empty($msg)) {
+			$formErrors[] = "<strong>Message!</strong> can't be <strong>Empty</strong>";
+    }
+    
+    // if no errors send the email
+    $headers = "From: " . $email . '\r\n';
+    $myEmail = "sayedaladway@gmail.com";
+    $subject = "Contact Form";
+    if(empty($formErrors)) {
+      mail($myEmail, $subject , $msg, $headers);
+    }
+
+	}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -927,7 +972,19 @@
     <div id="contact" class="contact-us">
       <div class="container">
         <h2 class="section-title text-md-center">Contact Us & Get Started</h2>
-        <form class="contact-form" method="POST">
+        <form class="contact-form" action="<?php echo $_SERVER['PHP_SELF'] ?>" method="POST">
+          <?php
+			if(!empty($formErrors)) { ?>
+				<div class="alert alert-danger alert-dismissible" role="alert">
+					<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+					<?php
+					foreach ($formErrors as $error) {
+						echo $error . "<br/>";
+					} ?>
+				</div>
+			<?php }	?>
           <div class="row">
             <div class="col-md-6">
               <div class="info">
@@ -937,6 +994,7 @@
                     type="text"
                     name="name"
                     placeholder="Full Name"
+                    value="<?php if(isset($user)) { echo $user; } ?>"
                   />
                   <div class="custom-alert">*Error Message</div>
                 </div>
@@ -946,6 +1004,7 @@
                     type="text"
                     name="company"
                     placeholder="Company"
+                    value="<?php if(isset($company)) { echo $company; } ?>"
                   />
                   <div class="custom-alert">*Error Message</div>
                 </div>
@@ -957,6 +1016,7 @@
                     type="tel"
                     name="phone"
                     placeholder="Phone Number"
+                    value="<?php if(isset($phone)) { echo $phone; } ?>"
                   />
                   <div class="custom-alert">*Error Message</div>
                 </div>
@@ -966,6 +1026,7 @@
                     type="email"
                     name="email"
                     placeholder="Email Address"
+                    value="<?php if(isset($email)) { echo $email; } ?>"
                   />
                   <div class="custom-alert">*Error Message</div>
                 </div>
@@ -976,6 +1037,7 @@
                   type="text"
                   placeholder="Business Type"
                   name="business"
+                  value="<?php if(isset($business)) { echo $business; } ?>"
                 />
                 <div class="custom-alert">*Error Message</div>
               </div>
@@ -986,7 +1048,7 @@
                   id="msg"
                   name="msg"
                   placeholder="Your Message"
-                ></textarea>
+                ><?php if(isset($msg)) { echo $msg; } ?></textarea>
                 <div class="custom-alert">*Error Message</div>
               </div>
             </div>
@@ -1011,11 +1073,7 @@
 
     <!-- jQuery and Bootstrap Bundle (includes Popper) -->
     <script src="js/jquery-3.4.1.min.js"></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
-      crossorigin="anonymous"
-    ></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/app.js"></script>
   </body>
 </html>
