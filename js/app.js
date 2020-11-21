@@ -151,7 +151,7 @@ $(function () {
   });
 
   // smoothly scroll to element
-  $(".navbar li a").click(function (e) {
+  $(".navbar li a, a[data-scroll='contact']").click(function (e) {
     e.preventDefault();
     $(this).data("scroll");
     $("html, body").animate(

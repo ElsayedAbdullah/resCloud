@@ -55,6 +55,7 @@ body.overlay:after {
   transition: all 0.3s ease-in-out;
   position: relative;
   outline: none;
+  text-transform: uppercase;
   &:focus {
     outline: none;
   }
@@ -89,6 +90,13 @@ body.overlay:after {
   font-weight: bold;
   font-size: 48px;
   line-height: 53px;
+  @media #{$betweentabdesk} {
+    font-size: 44px;
+  }
+  @media #{$tablet} {
+    font-size: 40px;
+    line-height: 44px !important;
+  }
   @media #{$mobile} {
     font-size: 32px;
     line-height: 44px !important;
@@ -115,6 +123,9 @@ body.overlay:after {
     align-items: flex-start;
     background: linear-gradient(180deg, #0b0c22 0%, rgba(11, 12, 34, 0) 67.72%);
     background-blend-mode: darken;
+    @media #{$betweentabdesk} {
+      padding: 20px 0;
+    }
     &.navbar-show-mobile {
       background-color: #0b0c22 !important;
       position: fixed !important;
@@ -127,7 +138,7 @@ body.overlay:after {
       background: rgba(11, 12, 34, 0.9);
       background-blend-mode: darken;
       animation: q 0.65s cubic-bezier(0.23, 1, 0.32, 1) both;
-      @media #{$mobile} {
+      @media #{$maxTab} {
         background: #0b0c22;
         background-blend-mode: darken;
         box-shadow: 0px 8px 14px rgba(0, 0, 0, 0.25);
@@ -142,12 +153,14 @@ body.overlay:after {
         }
       }
     }
-    @media #{$mobile} {
-      align-items: flex-end;
-      padding: 28px;
-      position: absolute;
-      width: 100%;
 
+    .logo {
+      img {
+        height: 30px;
+        display: block;
+      }
+    }
+    @media #{$maxTab} {
       .toggler {
         display: inline-block;
         cursor: pointer;
@@ -167,6 +180,13 @@ body.overlay:after {
       .change .bar3 {
         transform: rotate(45deg) translate(0px, -5px);
       }
+    }
+
+    @media #{$maxTab} {
+      align-items: flex-end;
+      padding: 28px;
+      position: absolute;
+      width: 100%;
 
       .logo {
         img {
@@ -175,7 +195,7 @@ body.overlay:after {
         }
       }
     }
-    @media #{$mobile} {
+    @media #{$maxTab} {
       .navbar-collapse {
         padding-top: 30px;
       }
@@ -208,7 +228,7 @@ body.overlay:after {
           &:after {
             width: 22px;
             opacity: 1;
-            @media #{$mobile} {
+            @media #{$maxTab} {
               display: none;
             }
           }
@@ -216,7 +236,7 @@ body.overlay:after {
         &:active {
           opacity: 0.6;
         }
-        @media #{$mobile} {
+        @media #{$maxTab} {
           margin-left: 0;
           padding: 15px 0px;
           border-top: 1px solid rgba(44, 82, 198, 0.2);
@@ -226,7 +246,7 @@ body.overlay:after {
         }
       }
       &.login-btns {
-        @media #{$mobile} {
+        @media #{$maxTab} {
           flex-direction: row;
           justify-content: space-between;
           margin-top: 20px;
@@ -250,7 +270,7 @@ body.overlay:after {
         margin-left: 20px;
         line-height: 44px;
         height: 44px;
-        @media #{$mobile} {
+        @media #{$maxTab} {
           margin-left: 0;
           line-height: 40px;
           height: 40px;
@@ -269,6 +289,9 @@ body.overlay:after {
     color: #fff;
     max-width: 1500px;
     margin: auto;
+    @media #{$tablet} {
+      padding: 300px 0 80px;
+    }
     @media #{$mobile} {
       text-align: left;
       padding: 380px 10px 75px;
@@ -295,6 +318,12 @@ body.overlay:after {
 
   .our-services {
     padding-bottom: 200px;
+    @media #{$betweentabdesk} {
+      padding-bottom: 70px;
+    }
+    @media #{$tablet} {
+      padding-bottom: 50px;
+    }
     @media #{$mobile} {
       padding-left: 10px;
       padding-right: 10px;
@@ -304,7 +333,10 @@ body.overlay:after {
       position: absolute;
       left: 10px;
       right: 80px;
-      @media #{$mobile} {
+      @media #{$betweentabdesk} {
+        top: -190px;
+      }
+      @media #{$maxTab} {
         position: static;
         padding: 0 10px;
       }
@@ -352,6 +384,9 @@ body.overlay:after {
   background-color: #fff;
   position: relative;
   z-index: 2;
+  @media #{$tablet} {
+    padding: 80px 0;
+  }
   @media #{$mobile} {
     padding-top: 70px;
     transform: skew(0deg, -10deg);
@@ -382,14 +417,19 @@ body.overlay:after {
       display: flex;
       justify-content: space-between;
       max-width: 590px;
-      @media #{$mobile} {
+      @media #{$betweentabdesk} {
+        flex-direction: column;
+      }
+      @media #{$maxTab} {
         display: block;
+        max-width: none;
       }
 
       p {
         width: 48%;
         color: rgba(11, 12, 34, 0.8);
-        @media #{$mobile} {
+
+        @media (max-width: 1200px) {
           width: 100%;
           margin-bottom: 20px;
         }
@@ -448,8 +488,17 @@ body.overlay:after {
     position: absolute;
     left: 60px;
     right: -70px;
-    @media #{$mobile} {
+    @media #{$betweentabdesk} {
+      left: 20px;
+      right: -30px;
+      top: -250px;
+    }
+    @media #{$tablet} {
+      margin-bottom: 50px;
+    }
+    @media #{$maxTab} {
       position: static;
+      text-align: center;
     }
   }
 }
@@ -489,6 +538,12 @@ body.overlay:after {
   .box {
     display: flex;
     margin-top: 70px;
+    @media #{$betweentabdesk} {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
     @media #{$mobile} {
       margin-top: 50px;
     }
@@ -500,6 +555,10 @@ body.overlay:after {
       border: 1px solid #44b6f3;
       text-align: center;
       margin-right: 20px;
+      @media #{$betweentabdesk} {
+        margin-right: 0;
+        margin-bottom: 20px;
+      }
     }
     .desc {
       flex: 1;
@@ -524,12 +583,14 @@ body.overlay:after {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-top: 115px;
-    margin-bottom: 120px;
+    margin: 115px 0 120px;
+    @media #{$tablet} {
+      padding: 30px;
+      margin: 80px 0;
+    }
     @media #{$mobile} {
       flex-direction: column;
-      margin-top: 70px;
-      margin-bottom: 70px;
+      margin: 70px 0;
       padding: 40px 25px 40px;
     }
     h3 {
@@ -540,6 +601,10 @@ body.overlay:after {
       color: #ffffff;
       max-width: 255px;
       margin-bottom: 0;
+      @media #{$tablet} {
+        font-size: 22px;
+        line-height: 31px;
+      }
       @media #{$mobile} {
         font-size: 28px;
         line-height: 31px;
@@ -571,6 +636,12 @@ body.overlay:after {
         margin-left: 10px;
         transition: all 0.3s ease-in-out;
         position: relative;
+        @media #{$tablet} {
+          width: 140px;
+          height: 40px;
+          line-height: 40px;
+          font-size: 14px;
+        }
         &:after {
           content: "";
           background: rgba(#000000, 0.05);
@@ -606,6 +677,9 @@ body.overlay:after {
         }
         svg {
           margin-right: 15px;
+          @media #{$tablet} {
+            margin-right: 8px;
+          }
           &.mac,
           &.android {
             position: relative;
@@ -624,6 +698,10 @@ body.overlay:after {
     }
     .support-text {
       max-width: 390px;
+      @media #{$tablet} {
+        max-width: none;
+        margin-bottom: 50px;
+      }
       @media #{$mobile} {
         margin-bottom: 30px;
       }
@@ -643,6 +721,9 @@ body.overlay:after {
       flex-direction: column;
       justify-content: space-between;
       width: 100%;
+      @media #{$betweentabdesk} {
+        padding: 24px;
+      }
       @media #{$mobile} {
         margin-bottom: 30px;
       }
@@ -701,7 +782,7 @@ body.overlay:after {
 
   .support-countries {
     padding-bottom: 150px;
-    @media #{$mobile} {
+    @media #{$maxTab} {
       padding-bottom: 70px;
     }
     .section-title {
@@ -731,6 +812,9 @@ body.overlay:after {
         text-align: center;
         padding: 0 38px;
         margin: 0 7px 20px;
+        @media #{$tablet} {
+          padding: 0 30px;
+        }
         @media #{$mobile} {
           width: 100%;
           margin-bottom: 20px;
@@ -752,6 +836,9 @@ body.overlay:after {
 
 .faq {
   padding: 100px 0 115px;
+  @media #{$tablet} {
+    padding: 80px 0;
+  }
   @media #{$mobile} {
     padding: 50px 0 60px;
   }
@@ -767,6 +854,10 @@ body.overlay:after {
     justify-content: space-between;
     position: relative;
     border-bottom: 0;
+    .nav-item {
+      width: 25%;
+      text-align: center;
+    }
     &:after {
       content: "";
       background-color: #efefef;
@@ -790,7 +881,7 @@ body.overlay:after {
       background-color: transparent;
       border-color: transparent;
       transition: all 0.3s ease-in-out;
-      padding: 0.5rem 25px 22px;
+      padding: 0.5rem 0 22px;
 
       &.active {
         color: #233258;
@@ -927,6 +1018,10 @@ body.overlay:after {
   .faq-content {
     max-width: 470px;
     margin-left: auto;
+    @media #{$tablet} {
+      max-width: none;
+      margin-bottom: 50px;
+    }
     h2 {
       margin-bottom: 27px;
       @media #{$mobile} {
@@ -1000,6 +1095,9 @@ body.overlay:after {
   background: linear-gradient(278.98deg, #233258 -10.45%, #0b0c22 94.43%);
   padding: 90px 0 75px;
   color: #fff;
+  @media #{$tablet} {
+    padding: 70px 0 50px;
+  }
   @media #{$mobile} {
     padding: 55px 10px;
   }
@@ -1081,7 +1179,7 @@ body.overlay:after {
       text-align: center;
       margin-top: 45px;
       margin-bottom: 85px;
-      @media #{$mobile} {
+      @media #{$maxTab} {
         margin: 20px 0 75px;
       }
       button {
@@ -1103,10 +1201,15 @@ body.overlay:after {
       align-items: flex-start;
     }
     .logo {
+      display: block;
+      img {
+        height: 30px;
+        display: block;
+      }
       @media #{$mobile} {
         margin-bottom: 30px;
         img {
-          width: 142px;
+          height: 24px;
         }
       }
     }

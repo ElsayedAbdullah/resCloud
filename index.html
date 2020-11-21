@@ -29,7 +29,7 @@
         <nav class="navbar navbar-expand-lg sticky-top navbar-light">
           <div class="container">
             <a class="logo" href="index.html">
-              <img src="imgs/logo.svg" alt="logo" />
+              <img src="imgs/logo.png" alt="logo" />
             </a>
             <div
               class="toggler"
@@ -57,8 +57,16 @@
                 </li>
               </ul>
               <ul class="navbar-nav login-btns ml-auto">
-                <li><a href="#" class="login-btn btn">LOG IN</a></li>
-                <li><a class="primary--btn btn" href="#">SIGN UP</a></li>
+                <li>
+                  <a data-scroll="contact" href="#" class="login-btn btn"
+                    >LOG IN</a
+                  >
+                </li>
+                <li>
+                  <a data-scroll="contact" class="primary--btn btn" href="#"
+                    >SIGN UP</a
+                  >
+                </li>
               </ul>
             </div>
           </div>
@@ -70,13 +78,15 @@
           <h1 class="section-title">
             Simple Scaling For The Residential Cloud
           </h1>
-          <a href="#" class="primary--btn btn">DISCOVER MORE</a>
+          <a data-scroll="contact" href="#" class="primary--btn btn"
+            >DISCOVER MORE</a
+          >
         </div>
       </div>
 
       <div class="our-services">
         <div class="container">
-          <div class="row">
+          <div class="row align-items-center">
             <div class="col-md-6">
               <div class="left-side">
                 <img
@@ -101,7 +111,9 @@
                   auto-install images. Begin using our infrastructure within
                   minutes.
                 </p>
-                <a href="#" class="primary--btn">SEE PRICING</a>
+                <a data-scroll="contact" href="#" class="primary--btn"
+                  >contact us</a
+                >
               </div>
             </div>
           </div>
@@ -113,7 +125,7 @@
       <div class="content">
         <div class="container">
           <div class="row">
-            <div class="col-md-7 order-2 order-md-1">
+            <div class="col-lg-7 order-2 order-lg-1">
               <div class="benefits-content">
                 <h4 class="section-subtitle">
                   BENEFITS OF RESIDENTIAL IP NETWORKING
@@ -141,7 +153,9 @@
                   </p>
                 </div>
                 <div class="benefits-btns">
-                  <a href="#" class="primary--btn">GET STARTED</a>
+                  <a data-scroll="contact" href="#" class="primary--btn"
+                    >GET STARTED</a
+                  >
                   <a href="#">
                     <span>SEE PRICING</span>
                     <img src="imgs/arrow-right.svg" alt="arrow-right" />
@@ -149,7 +163,7 @@
                 </div>
               </div>
             </div>
-            <div class="col-md-5 order-1 order-md-2">
+            <div class="col-md-8 m-md-auto col-lg-5 order-1 order-lg-2">
               <div class="benefits-img">
                 <img
                   class="img-fluid"
@@ -182,7 +196,7 @@
           </p>
         </div>
         <div class="row">
-          <div class="col-md-4">
+          <div class="col-lg-4 col-md-6">
             <div class="box">
               <div class="icon">
                 <img src="imgs/remote-access.svg" alt="remote-access icon" />
@@ -196,7 +210,7 @@
               </div>
             </div>
           </div>
-          <div class="col-md-4">
+          <div class="col-lg-4 col-md-6">
             <div class="box">
               <div class="icon">
                 <img src="imgs/loading.svg" alt="Custom ISO Loading icon" />
@@ -210,7 +224,7 @@
               </div>
             </div>
           </div>
-          <div class="col-md-4">
+          <div class="col-lg-4 col-md-6">
             <div class="box">
               <div class="icon">
                 <img
@@ -227,7 +241,7 @@
               </div>
             </div>
           </div>
-          <div class="col-md-4">
+          <div class="col-lg-4 col-md-6">
             <div class="box">
               <div class="icon">
                 <img src="imgs/quick-vm.svg" alt="Quick VM Deployment icon" />
@@ -241,7 +255,7 @@
               </div>
             </div>
           </div>
-          <div class="col-md-4">
+          <div class="col-lg-4 col-md-6">
             <div class="box">
               <div class="icon">
                 <img src="imgs/upgrade.svg" alt="upgrade icon" />
@@ -255,7 +269,7 @@
               </div>
             </div>
           </div>
-          <div class="col-md-4">
+          <div class="col-lg-4 col-md-6">
             <div class="box">
               <div class="icon">
                 <img
@@ -275,7 +289,7 @@
         </div>
 
         <div class="row">
-          <div class="col-md-10 m-auto">
+          <div class="col-xl-10 m-auto">
             <div class="compatible">
               <h3>Our Panel is compatible with</h3>
               <ul class="list-unstyled">
@@ -333,16 +347,18 @@
 
         <div class="support">
           <div class="row">
-            <div class="col-md-6">
-              <h2 class="section-title">Managed Support</h2>
-              <p class="support-text">
-                ResCloud takes a unique approach to managed support services.
-                Not only do we provide a simple to use ticketing siystem, but we
-                make ourselves available for consulting & support via many
-                methods of communication across multiple timezones.
-              </p>
+            <div class="col-lg-6">
+              <div class="left">
+                <h2 class="section-title">Managed Support</h2>
+                <p class="support-text">
+                  ResCloud takes a unique approach to managed support services.
+                  Not only do we provide a simple to use ticketing siystem, but
+                  we make ourselves available for consulting & support via many
+                  methods of communication across multiple timezones.
+                </p>
+              </div>
             </div>
-            <div class="col-md-6">
+            <div class="col-lg-6">
               <div class="right">
                 <div class="row">
                   <div class="col-md-6">
@@ -373,7 +389,10 @@
                     <img src="imgs/visa.svg" alt="visa" />
                     <img src="imgs/mastercard.svg" alt="mastercard" />
                   </div>
-                  <a href="#" class="primary--btn order-1 order-md-2"
+                  <a
+                    data-scroll="contact"
+                    href="#"
+                    class="primary--btn order-1 order-md-2"
                     >SIGN UP & GET STARTED</a
                   >
                 </div>
@@ -427,7 +446,7 @@
     <div id="faq" class="faq">
       <div class="container">
         <div class="row">
-          <div class="col-md-6 order-2 order-md-1">
+          <div class="col-lg-6 order-2 order-lg-1">
             <ul class="nav nav-tabs d-none d-md-flex" id="myTab" role="tablist">
               <li class="nav-item" role="presentation">
                 <a
@@ -842,7 +861,7 @@
               </div>
             </div>
           </div>
-          <div class="col-md-6 order-1 order-md-2">
+          <div class="col-lg-6 order-1 order-lg-2">
             <div class="faq-content">
               <h2 class="section-title">Frequently Asked Questions</h2>
               <p>
@@ -979,7 +998,7 @@
         <footer>
           <div class="logo">
             <a href="index.html">
-              <img src="imgs/logo.svg" alt="logo" />
+              <img src="imgs/logo.png" alt="logo" />
             </a>
           </div>
           <ul class="footer-links list-unstyled">
