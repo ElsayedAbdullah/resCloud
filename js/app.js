@@ -149,7 +149,6 @@ $(function () {
       $("#emailInput, #msg, #company, #fullName, #phone, #business").blur();
     }
   });
-
   // smoothly scroll to element
   $(".navbar li a, a[data-scroll='contact']").click(function (e) {
     e.preventDefault();
